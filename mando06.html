@@ -1,0 +1,47 @@
+<script>
+    function doThing() {
+        let year = document.getElementById("year").value;
+        year = parseInt(year);
+        let isOK = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    //29
+                    isOK = true;
+                } else {
+                    //28
+                    isOK = false;
+                }
+            } else {
+                //29, 22016
+                isOK = true;
+            }
+        } else {
+            //28
+            isOK = false;
+
+        }
+        document.getElementById('result').innerHTML =
+            isOK ? 'Y' : "N";//三元運算式 ？：
+
+
+
+
+
+
+
+        // if (year % 4 == 0) {
+        //     document.write("Y");
+        // } else if (year % 100 == 0) {
+        //     document.write("N");
+        // } else {
+        //     document.write("N");
+        // }
+
+
+
+</script>
+
+<input type="number" id="year" />
+<input type="button" value="is it?" onclick="doThing()" />
+<span id="result"></span>

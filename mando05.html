@@ -1,0 +1,27 @@
+<script>
+    let score = prompt("Plz input score~");//prompt=輸入
+
+    let score = Math.random();//亂數範圍會是0-1之間
+
+    score = parseInt(score * 101);//總共有101個數字不需要位移
+    score = parseInt(score * 49) + 1;//49->全部的 1->是否需要位移
+
+    //90A, 80B, 70C 60D E
+
+    if (score >= 90) {
+        document.write("A");
+    } else if (score >= 80) {
+        document.write("B");
+
+    } else if (score >= 70) {
+        document.write("C");
+        score = 50;
+    } else if (score >= 60) {
+        document.write("D");
+    } else {
+        document.write("E");
+    }
+    document.write("<hr>");
+    document.write(score);
+
+</script>
