@@ -5,10 +5,17 @@
         let rand = parseInt(Math.random()*52); 0-51
         //檢查是否重複
         //檢查機制(類似質數邏輯)
+        let isRepeat = false;
         for(let j =0; j<i; j++){
             if(poker[j] == rand){
                 //重複了
+                isRepeat = true;
+                break;
             }
+        }
+        if(isRepeat){
+            i--;
+            continue;
         }
         poker[i] = rand;
     }

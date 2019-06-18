@@ -1,26 +1,49 @@
 <script>
     function doCal() {
-        let x = document.getElementById("x").value;
+        let op = document.getElementById("op");
+        let opVal = op.selectedIndex;//select自己的內建function
+
+
+
+        let x = document.getElementById("x").value;//x左邊的值
         let y = document.getElementById("y").value;
-        let result = document.getElementById("result");
+        let result = document.getElementById("result");//result 抓e-->物件 --x跟y運算後結果放置位子
         x = parseInt(x);
         y = parseInt(y);
 
-        let z1 = parseInt(x/y);//parseInt 轉成整數
-        let z2 = x%y;
-        
-        result.innerHTML = z1+"......"+z2;
-        
+        switch (opVal) {
+            case 0:
+                result.innerHTML = x + y;//抓取需要的元素
+                break;
+            case 1:
+                result.innerHTML = x - y;
+            break;
+
+            case 2:
+            result.innerHTML = x * y;
+             break;
+
+            case 3:
+                let z1 = parseInt(x / y);//parseInt 轉成整數
+                let z2 = x % y;
+                result.innerHTML = z1 + "......" + z2;
+                break;
+
+        }
+
     }
 
 </script>
 <input type="number" id="x" />
-<select>
+<select id="op">
+
     <option>+</option>
     <option>-</option>
     <option>*</option>
     <option>/</option>
+
 </select>
+
 <input type="number" id="y" />
 <input type="button" value="=" onclick="doCal()" />
 <span id="result">MANDO</span>

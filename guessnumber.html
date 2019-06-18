@@ -1,0 +1,56 @@
+<script src="mandojs.js"></script>
+<script>
+    let answer = ceateAnswer(3);
+    //console.log(answer);
+    let log = '';
+    let times = 0;
+    function doGuessing() {
+        times++;//猜了
+        let guessElement = document.getElementById('guess');
+        let guess = setElementById.value;
+        let result = checkAB(answer, guess);
+
+        if (result == 3 + 'A0B') {
+            alert("WIN");
+            reset();
+        } else if(times ==10){
+            alert('Loser : answer is' + answer);
+            reset();
+        }else{
+            alert(result);
+
+        }
+    }
+
+        log += times + "." +guess + "=>" + result + "<br>";
+        document.getElementById('log').innerHTML = log;
+        getElementById.value = '';
+        getElementById.focus();
+    
+
+    function reset() {
+        if (!confirm('Reset?')) return;
+
+        times = 0;
+        answer = ceateAnswer(3);
+        log = '';
+        document.getElementById('log').innerHTML = log;
+        document.getElementById('guess').value = '';
+        document.getElementById('guess').focus() = '';
+    }
+</script>
+
+
+
+<h1>Guess the Number</h1>
+<hr>
+<input type="number" id="guess" />
+<input type="button" onclick="doGuessing()" value="Guess" />
+<input type="button" onclick="reset()" value="Reset" />
+<select id="num">
+<option value=""></option>
+
+</select>
+
+<hr>
+<div id='log'></div>

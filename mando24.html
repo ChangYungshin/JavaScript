@@ -1,0 +1,25 @@
+<script>
+    let counter = 0;
+    let timer;
+
+    function go() {//按下按右後觸發
+        timer = setInterval(doThing, 1 * 1000);
+
+    }
+    function doThing() {
+
+        document.getElementById('counter').innerHTML = counter++;//將會等於counter的值
+    }
+    //清除由timer在操控的
+    function stopGame() {
+        clearInterval(timer);
+    }
+    //物件裡面放陣列,再一次清掉
+</script>
+
+Timer : <span id='counter'></span>
+<hr>
+<input type="button" onclick="go()" value='GO!' />
+<input type="button" onclick="stopGame()" value="STOP" />
+
+
