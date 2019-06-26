@@ -1,0 +1,26 @@
+
+<select name="textAlign" id="textAligh" onchange="">
+    <!-- 通常在跟後端傳輸資料的時候 -->
+    <option value='' >default</option>
+    <option value='left' >left</option>
+    <option value='right' >right</option>
+    <option value='center' >center</option>
+</select>
+<input type="button" value="test" onclick="test()"/>
+<!-- 區塊 -->
+<div id="mytext" style="text-align:center">HELLO WORLD</div>
+
+<script>
+    function test(){
+        let mytext = document.getElementById('mytext');
+        for(let key in mytext.style){
+            console.log(key + ":" + mytext[key]);
+        }
+        //document.write('OK');//clear
+    }
+    function chAligh(){
+        let mytext = document.getElementById('mytext');
+        let style = document.getElementById('textALign');
+        mytext.style[style.name] = style.value;
+    }
+</script>

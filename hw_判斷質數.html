@@ -1,0 +1,37 @@
+<script>
+
+var m = 1;
+var n = 100;
+var count = 0;
+// 加總
+
+for(var i=m;i<n;i++){
+    if(isPrime(i)){
+        count++;
+        document.write(i+" ");
+        if(count%10==0){
+            System.out.println();
+        }
+    }
+}
+document.write();
+document.write("在"+m+"和"+n+"之間共有"+count+"个素数");
+
+//判斷質數
+private static boolean isPrime(var n){
+boolean flag = true;
+if(n==1)
+  flag = false;
+else{
+    for(var i=2;i<=Math.sqrt(n);i++){
+    if((n%i)==0 || n==1){
+        flag = false;
+        break;
+    }
+     else
+       flag = true;
+  }
+}
+return flag;
+}
+</script>

@@ -1,0 +1,26 @@
+<script>
+    let delay = 5000, i = 1;
+
+    function doThing() {
+        if (delay <= 10) {
+            doThings();
+            return;
+        }
+        console.log(i++);
+        setTimeout(doThing, delay);
+        delay -= delay / 2;
+    }
+
+
+    function doThings() {
+        if (delay >= 3000) {
+            return;
+        }
+        console.log(i--)
+        setTimeout(doThings, delay);
+        delay *=1.5;
+    }
+
+    doThing();
+
+</script>

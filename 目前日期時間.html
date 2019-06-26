@@ -1,0 +1,19 @@
+<meta charset = "utf-8">
+<script src="./bradapis.js"></script>
+<script>
+function showNow(){
+    let now = new Date();
+    let nowString = now.getFullYear()+ " - " +
+        (now.getMonth()+1)+ "Month"+
+        now.getDate() + "Day" +
+        now.getCWeek() + "" +
+        now.getHours() + ":" +
+        now.getMinutes() + ":" +
+        now.getSeconds();
+    document.getElementById('now').innerHTML = nowString;
+}
+
+setInterval(showNow, 500);
+</script>
+
+目前日期時間: <span id="now"></span>

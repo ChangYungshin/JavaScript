@@ -1,20 +1,23 @@
-<script src="mandojs.js"></script>
+<script src="23_ID_check.js"></script>
 
 <script>
 
     // let id = 'A123456789';
     // //身分證要驗證的條件
     // let regex = /^[A-Z][12][0-9]{8}$/;//沒有家g的話只要達到目的就會離開,[]字元集合取任意一個部分
+    // let idn = Math.random();
+    // idn = parseInt(idn *9);
 
-    function ckId() {
+    function ckId(){
         let id = document.getElementById('id').value;
         let isRight = checkTWId(id);
-        if (!isRight) {
+        if (!isRight){
             alert('XX');
-        } else {
+        }else{
             alert('OK');
         }
     }
 </script>
+<input type="button" onclick="ckId()" value='Check'/>
 <input type="text" id="id" />
-<input type="button" onclick="ckId()" value='Check' />
+

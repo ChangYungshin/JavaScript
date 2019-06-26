@@ -1,15 +1,3 @@
-// function checkTWId(id){
-//     let ret = false;
-//     if(id.length ==10){
-//         let c1 = id.substr(0, 1);
-//         let letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-//         if(letters.indexOf(c1)>=0){
-
-//         }
-
-//     }
-//     return ret;
-// }
 
 function checkTWId(id) {
 
@@ -18,7 +6,7 @@ function checkTWId(id) {
     let regex = /^[A-Z][12][0-9]{8}$/;//沒有家g的話只要達到目的就會離開,[]字元集合取任意一個部分
     let result = id.match(regex);
     if (result != null) {
-        let letters = 'ABCDEFGJKLMNPRSTUVXYWZIO';
+        let letters = [a-zA-Z];
         let c12 = id.substr(0, 1);//拿出英文字母
         letters.indexOf(c12) + 10//加上10得到數值
         let n1 = parseInt(n12 / 10);
